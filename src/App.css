@@ -1,38 +1,133 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app {
   min-height: 100vh;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app.light {
+  background-color: #f8f9fa;
+  color: #001f3f;
+}
+
+.app.dark {
+  background-color: #0a192f;
+  color: #f8f9fa;
+}
+
+header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #d4af37;
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #001f3f;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app.dark h1 {
+  color: #d4af37;
+}
+
+button {
+  background-color: #001f3f;
+  color: #d4af37;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.app.dark button {
+  background-color: #d4af37;
+  color: #001f3f;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.matches-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.match-card {
+  background-color: white;
+  border: 2px solid #d4af37;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.app.dark .match-card {
+  background-color: #001f3f;
+  border-color: #d4af37;
+}
+
+.match-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.match-card h3 {
+  margin: 0 0 1rem 0;
+  color: #001f3f;
+  font-size: 1.2rem;
+}
+
+.app.dark .match-card h3 {
+  color: #d4af37;
+}
+
+.match-status {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #001f3f;
+}
+
+.app.dark .match-status {
+  color: #d4af37;
+}
+
+.teams p {
+  margin: 0.5rem 0;
+  color: #001f3f;
+}
+
+.app.dark .teams p {
+  color: #f8f9fa;
+}
+
+.loading, .no-matches {
+  text-align: center;
+  padding: 2rem;
+  color: #001f3f;
+}
+
+.app.dark .loading, 
+.app.dark .no-matches {
+  color: #d4af37;
+}
+
+.error {
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #ffecec;
+  color: #d32f2f;
+  border: 1px solid #d32f2f;
+}
+
+.app.dark .error {
+  background-color: #330000;
+  color: #ff6b6b;
+  border-color: #ff6b6b;
 }
